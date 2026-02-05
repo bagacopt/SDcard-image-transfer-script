@@ -1,1 +1,0 @@
-"# SDcard-image-transfer-script" 
