@@ -3,7 +3,6 @@ setlocal enabledelayedexpansion
 
 REM ===== CONFIG =====
 set SOURCE=%USERPROFILE%\Desktop\SD_cards
-set FILETYPES=*.bin
 set DRIVE=D:
 set CHECK_INTERVAL=2
 set POST_COPY_DELAY=3
@@ -62,7 +61,7 @@ if %FORMAT_CARD%==1 (
 
 REM --- Copy files ---
 echo Copying image files...
-xcopy "%SOURCE%\%FILETYPES%" "%DRIVE%\" /Y /I >nul
+robocopy "%SOURCE%" "%DRIVE%" *.bin *.png *.jpg *.gif >nul
 
 echo Copy complete.
 echo Waiting %POST_COPY_DELAY% seconds for write flush...
